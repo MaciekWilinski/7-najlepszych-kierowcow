@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeria</title>
+    <link rel="stylesheet" type="text/CSS" href="Style.css">
+</head>
+<body>
+    <div class="header">
+		<h1><a name="Gora">Galeria</a></h1>
+    </div>
+
+    <div class="navbar ">
+        <a href="Index.html">Strona Główna</a>
+        <a href="Życiorysy.html">Życiorysy kierowców</a>
+        <div class="dropdown">
+        <button class="dropbtn" onclick="myFunction()">Więcej
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content" id="myDropdown">
+          <a href="#Galeria">Galeria</a>
+        </div>
+        </div> 
+      </div>
+
+
+      <h2 name="Galeria">Galeria</h2>
+      
+      <hr>
+    <div class="duzy">
+      <div class="responsive">
+        <div class="gallery">
+          <a target="_blank" href="Foto/Rorhl.jpg">
+            <img src="Foto/Rorhl.jpg" alt="Walter Rorhl" width="600" height="400">
+          </a>
+          <div class="desc">Walter Rorhl</div>
+        </div>
+      </div>
+      
+      <div class="responsive">
+        <div class="gallery">
+          <a target="_blank" href="Foto/Toivonen.jpg">
+            <img src="Foto/Toivonen.jpg" alt="Henri Toivonen" width="600" height="400">
+          </a>
+          <div class="desc">Henri Toivonen</div>
+        </div>
+      </div>
+      
+      
+      <div class="responsive">
+        <div class="gallery">
+          <a target="_blank" href="Foto/Kulig.jpg">
+            <img src="Foto/Kulig.jpg" alt="Janusz Kulig" width="600" height="400">
+          </a>
+          <div class="desc">Janusz Kulig</div>
+        </div>
+      </div>
+      
+      <div class="responsive">
+        <div class="gallery">
+          <a target="_blank" href="Foto/Bublewicz.jpg">
+            <img src="Foto/Bublewicz.jpg" alt="Marian Bublewicz" width="600" height="400">
+          </a>
+          <div class="desc">Marian Bublewicz</div>
+        </div>
+      </div>
+      
+      <div class="responsive">
+        <div class="gallery">
+          <a target="_blank" href="Foto/Schumacher.jpg">
+            <img src="Foto/Schumacher.jpg" alt="Michael Schumacher" width="600" height="400">
+          </a>
+          <div class="desc">Michael Schumacher</div>
+        </div>
+      </div>
+
+      <div class="responsive">
+        <div class="gallery">
+          <a target="_blank" href="Foto/Senna.jpg">
+            <img src="Foto/Senna.jpg" alt="Ayrton Senna" width="600" height="400">
+          </a>
+          <div class="desc">Ayrton Senna</div>
+        </div>
+      </div>
+
+      <div class="responsive">
+        <div class="gallery">
+          <a target="_blank" href="Foto/Block.jpg">
+            <img src="Foto/Block.jpg" alt="Ken Block" width="600" height="400">
+          </a>
+          <div class="desc">Ken Block</div>
+        </div>
+      </div>
+      
+      <div class="clearfix"></div>
+      
+      <div style="padding:6px;">
+    </div>
+  </div>
+
+  <div class="stopka">Maciej Wiliński<br>2024
+  </div>
+
+      <button onclick="topFunction()" id="myBtn" title="Go to top">Do Góry</button>
+
+    <script>
+        
+let mybutton = document.getElementById("myBtn");
+
+
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+
+function topFunction() {
+  document.body.scrollTop = 0; 
+  document.documentElement.scrollTop = 0; 
+}
+
+   
+
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(e) {
+  if (!e.target.matches('.dropbtn')) {
+  var myDropdown = document.getElementById("myDropdown");
+    if (myDropdown.classList.contains('show')) {
+      myDropdown.classList.remove('show');
+    }
+  }
+}
+
+
+let slideIndex = 1;
+showSlides(slideIndex);
+
+// Next/previous controls
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+// Thumbnail image controls
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("demo");
+  let captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
+    </script>
+</body>
+</html>

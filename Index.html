@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Najlepsi Kierowcy Wszechczasów</title>
+    <link rel="stylesheet" type="text/CSS" href="Style.css">
+</head>
+<body>
+    <div class="header">
+		<h1><a name="Gora">Najlepsi Kierowcy Wszechczasów</a></h1>
+    </div>
+      
+      <div class="navbar ">
+        <a href="Życiorysy.html">Życiorysy kierowców</a>
+        <a href="Galeria.html">Galeria</a>
+        <div class="dropdown">
+        <button class="dropbtn" onclick="myFunction()">Więcej
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content" id="myDropdown">
+          <a href="#Kierowcy">Kierowcy</a>
+          <a href="#Dokonania">Dokonania</a>
+          <a href="#imie">Formularz</a>
+        </div>
+        </div> 
+      </div>
+
+    <div>
+      <img src="Foto/Schumacher.jpg" class="animated-element">
+    </div>
+    <div class="glowny1">
+		<h2><a name="Kierowcy">Kierowcy</a></h2>
+ 		
+		<div>
+			<table>
+				<tr>
+					<th>Imię i Nazwisko</th>
+					<th>Kategorie</th>
+				</tr>
+				<tr>
+					<td>Walter Rorhl</td>
+					<td>Rajdy</td>
+				</tr>
+				<tr>
+					<td>Henri Toivonen</td>
+					<td>Rajdy</td>
+				</tr>
+				<tr>
+					<td>Janusz Kulig</td>
+					<td>Rajdy</td>
+				</tr>
+				<tr>
+					<td>Marian Bublewicz</td>
+					<td>Rajdy</td>
+				</tr>
+				<tr>
+					<td>Michael Schumacher</td>
+					<td>Formuła 1</td>
+				</tr>
+				<tr>
+					<td>Ayrton Senna</td>
+					<td>Formuła 1</td>
+				</tr>
+				<tr>
+					<td>Ken Block</td>
+					<td>Rajdy, Drifting i Jazda Wyczynowa</td>
+				</tr>
+			</table>
+		</div>
+		
+		<hr>
+		
+		<h2><a name="Dokonania">Wyczyny i dokonania</a></h2>
+        <ul>
+            <li><b>Walter Rorhl</b> -Rajdowy Mistrz Świata z lat '80, kierowca słynnej Rajdowej Grupy B</li>
+            <li><strong>Henri Toivonen</strong> - Legendarny kierowca rajdowy, kierowca słynnej Grupy B, zginął tragicznie w wypadku w trakcie rajdu Korsyki (Tour de Corse) 3 maja 1986 roku</li>
+            <li><strong>Janusz Kulig</strong> - Polski rajdowiec</li>
+            <li><strong>Marian Bublewicz</strong> - Polski rajdowiec</li>
+            <li><strong>Michael Schumacher</strong> - Siedmiokrotny mistrz Świata Formuły 1</li>
+            <li><strong>Ayrton Senna </strong>- Legendarny brazylijski kierowca F1</li>
+            <li><strong>Ken Block</strong> - Znany z umiejętności driftingu</li>
+        </ul>
+    </div>
+
+    <hr>
+
+    <div class="stopka">Maciej Wiliński<br>2024
+    </div>
+
+    <div class="form">
+      Zostaw nam swoją opinię!
+      <form>
+        <label for="imie">Imię</label><br>
+        <input type="text" id="imie" name="imie"><br>
+        <label for="nazwisko">Nazwisko</label><br>
+        <input type="text" id="nazwisko" name="nazwisko"><br>
+        <label class="opinia" for="opinia">Opinia</label><br>
+        <input type="text" id="opinia" name="opinia"><br>
+      </form>
+    </div>
+
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Do Góry</button>
+
+
+
+    <div class="navbar">
+      <a href="Życiorysy.html">Życiorysy kierowców</a>
+      <a href="Galeria.html">Galeria</a>
+      <div class="dropdown">
+          <button class="dropbtn" onclick="toggleDropdown()">Więcej
+              <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content" id="myDropdown">
+              <a href="#Kierowcy">Kierowcy</a>
+              <a href="#Dokonania">Dokonania</a>
+              <a href="#imie">Formularz</a>
+          </div>
+      </div>
+  </div> 
+    <script>
+        
+let mybutton = document.getElementById("myBtn");
+
+
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+
+function topFunction() {
+  document.body.scrollTop = 0; 
+  document.documentElement.scrollTop = 0; 
+}
+
+   
+
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(e) {
+  if (!e.target.matches('.dropbtn')) {
+  var myDropdown = document.getElementById("myDropdown");
+    if (myDropdown.classList.contains('show')) {
+      myDropdown.classList.remove('show');
+    }
+  }
+}
+    </script>
+
+</body>
+</html>
