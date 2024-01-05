@@ -225,3 +225,7 @@ ul li {
     animation: rotate 4s linear infinite; 
     float: right;
   }
+.content {
+    width: 100%;
+    padding: 25px;
+}
